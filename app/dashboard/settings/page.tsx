@@ -1,19 +1,12 @@
-"use client"
-import React, { useState } from 'react'
-import SearchSection from '@/app/dashboard/_components/SearchSection'
-import TemplateListSection from '@/app/dashboard/_components/TemplateListSection'
+import { UserProfile } from '@clerk/nextjs'
+import React from 'react'
 
-function Dashboard() {
-  const [userSearchInput,setUserSearchInput]=useState<string>()
+function Settings() {
   return (
-    <div>
-        {/* Search Section  */}
-        <SearchSection onSearchInput={(value:string)=>setUserSearchInput(value)} />
-
-        {/* Template List Section  */}
-        <TemplateListSection userSearchInput={userSearchInput} />
+    <div className='flex items-center justify-center h-full'>
+        <UserProfile/>
     </div>
   )
 }
 
-export default Dashboard
+export default Settings
